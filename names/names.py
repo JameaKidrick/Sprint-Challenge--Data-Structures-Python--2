@@ -12,10 +12,19 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
-# for name_1 in names_1:
-#     for name_2 in names_2:
-#         if name_1 == name_2:
-#             duplicates.append(name_1)
+# for name_1 in names_1: O(n)
+#     for name_2 in names_2: O(n)
+#         if name_1 == name_2: O(1)
+#             duplicates.append(name_1) O(1)
+
+'''
+for name_1 in names_1:                            O(n)
+    for name_2 in names_2:                            O(n)
+        if name_1 == name_2:                              O(1)
+            duplicates.append(name_1)                         O(1)
+
+THE STARTER CODE WAS RUNNING AT O(n^2)
+'''
 
 binary = BinarySearchTree(names_1[0])
 for name_1 in names_1:

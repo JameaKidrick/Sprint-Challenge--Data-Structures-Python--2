@@ -11,9 +11,12 @@ class RingBuffer:
         # if length of ringbuffer == capacity...
         if self.storage.length == self.capacity:
             # replace oldest element with new item
-            self.storage.delete(self.current)
-            self.storage.add_to_tail(item)
-            self.current = self.current.prev
+            self.current.value = item
+            if self.current == self.storage.head:
+                # self.storage.tail.value = item
+                self.current = self.storage.tail
+            else:
+                self.current = self.current.prev
         else:
             # add new element to head
             self.storage.add_to_head(item)
