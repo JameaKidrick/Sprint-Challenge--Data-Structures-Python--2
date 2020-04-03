@@ -35,6 +35,7 @@ class BinarySearchTree:
     # False if it does not
     def contains(self, target):
         # If there is no node at root, return False
+        # print('bst TARGET', target, 'bst VALUE', self.value)
         if self.value is None:
             return False
         # Compare target to the root
